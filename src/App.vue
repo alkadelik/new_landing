@@ -1,8 +1,5 @@
 <script setup>
 import AppButton from "@components/AppButton.vue"
-import { useRouter } from "vue-router"
-
-const router = useRouter()
 
 const footerLinks = {
   Contact: [
@@ -49,17 +46,19 @@ const footerLinks = {
         <span class="flex-1" />
 
         <div class="inline-flex items-center gap-2 sm:gap-6">
-          <RouterLink
-            to="/login"
+          <a
+            target="_blank"
+            href="https://suite.leyyow.com/login"
             class="hover:text-brand-500 text-core-600 text-base font-semibold"
           >
             Log in
-          </RouterLink>
-          <AppButton
-            class="hidden px-3 py-2 sm:inline-flex md:px-4 md:text-base"
-            label="Signup"
-            @click="router.push('/signup')"
-          />
+          </a>
+          <a href="http://suite.leyyow.com/signup" target="_blank" rel="noopener noreferrer">
+            <AppButton
+              class="hidden px-3 py-2 sm:inline-flex md:px-4 md:text-base"
+              label="Signup"
+            />
+          </a>
         </div>
       </nav>
     </header>
