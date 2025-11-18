@@ -181,7 +181,7 @@ onMounted(() => {
             data-aos-delay="300"
           />
           <img
-            src="/images/home/hero-section-mobile.svg"
+            src="/images/home/hero-section-mobile.svg?url"
             alt="Hero Mockup"
             class="mx-auto max-h-[600px] w-full object-contain lg:hidden"
             data-aos="fade-up"
@@ -364,12 +364,12 @@ onMounted(() => {
           </div>
 
           <img
-            src="/images/home/most-popular.svg"
+            src="/images/home/most-popular.svg?url"
             class="absolute -top-1 right-1/3 hidden h-14 md:block"
             alt=""
           />
           <img
-            src="/images/home/most-popular-sm.svg"
+            src="/images/home/most-popular-sm.svg?url"
             class="absolute -top-8 right-4 h-14 md:hidden"
             alt=""
           />
