@@ -48,18 +48,7 @@ const footerLinks = {
 
         <div class="inline-flex items-center gap-2 sm:gap-6">
           <a href="http://suite.leyyow.com/signup" target="_blank" rel="noopener noreferrer">
-            <AppButton
-              class="px-6!"
-              label="Sign In"
-              style="
-                background: linear-gradient(
-                  136.41deg,
-                  #1a2a6c -3.7%,
-                  #b21f1f 53.98%,
-                  #fdbb2d 99.39%
-                );
-              "
-            />
+            <AppButton class="gradient-btn px-6!" label="Sign In" />
           </a>
         </div>
       </nav>

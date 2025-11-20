@@ -33,60 +33,93 @@ const openSignup = (plan?: string) => {
 <template>
   <div class="font-outfit text-gray-900">
     <section class="py-8 md:py-16" aria-label="Hero section">
-      <div
-        class="relative mx-auto flex max-w-[1440px] flex-col items-center bg-cover bg-center bg-repeat px-4 md:bg-bottom"
-        :style="{ backgroundImage: 'url(/images/home/hero-pattern.svg)' }"
-      >
-        <div class="mx-auto w-full max-w-4xl text-center">
-          <a href="http://eventful.leyyow.com" target="_blank" rel="noopener noreferrer">
-            <Chip size="md" class="pl-1!">
-              <template #prepend>
-                <Chip size="sm" label="✨ Now live!!" variant="filled" />
-              </template>
-              <span class="ml-2 hidden sm:inline lg:hidden xl:inline"
-                >Eventful by Leyyow, for organisers</span
-              >
-              <span class="sm:hidden lg:inline xl:hidden">Eventful by Leyyow</span>
-              <template #append>
-                <Icon name="arrow-right" size="16" />
-              </template>
-            </Chip>
-          </a>
-          <h1
-            class="mt-4 font-sans text-3xl leading-normal font-semibold md:text-4xl"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            The near-perfect
-            <span class="text-primary-600 font-bold underline">Sales Management</span> platform for
-            small retail businesses
-          </h1>
-          <p
-            class="mt-4 mb-6 text-lg text-gray-600 xl:leading-[1.65]"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            Running a growing business can be overwhelming. Leyyow keeps you in control by helping
-            you sell online, track your inventory, monitor your sales, and understand your customers
-            - all in one place.
-          </p>
+      <div class="relative mx-auto max-w-6xl">
+        <!-- Background with opacity -->
+        <div
+          :style="{ backgroundImage: 'url(/images/lines.svg)' }"
+          class="pointer-events-none absolute inset-0 bg-size-[91%,100%] bg-center bg-no-repeat opacity-30"
+        ></div>
 
-          <AppButton
-            label="Get Started"
-            class="px-10!"
-            style="
-              background: linear-gradient(136.41deg, #1a2a6c -3.7%, #b21f1f 53.98%, #fdbb2d 99.39%);
-            "
-            @click="openSignup()"
-          />
+        <div
+          class="relative mx-auto flex w-full flex-col items-center gap-8 bg-cover bg-center bg-repeat px-4 md:bg-bottom"
+        >
+          <!-- hero text -->
+          <div class="relative mx-auto mb-12 w-full max-w-4xl text-center">
+            <!-- Radial gradient background -->
+            <div
+              class="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2"
+              style="
+                background: radial-gradient(
+                  circle,
+                  rgba(255, 255, 255, 1) 0%,
+                  rgba(255, 255, 255, 0.95) 30%,
+                  rgba(255, 255, 255, 0.8) 50%,
+                  rgba(255, 255, 255, 0.4) 70%,
+                  transparent 100%
+                );
+                filter: blur(60px);
+              "
+            ></div>
+
+            <a href="http://eventful.leyyow.com" target="_blank" rel="noopener noreferrer">
+              <Chip size="md" class="pl-1!">
+                <template #prepend>
+                  <Chip size="sm" label="✨ Now live!!" variant="filled" />
+                </template>
+                <span class="ml-2 hidden sm:inline lg:hidden xl:inline"
+                  >Eventful by Leyyow, for organisers</span
+                >
+                <span class="sm:hidden lg:inline xl:hidden">Eventful by Leyyow</span>
+                <template #append>
+                  <Icon name="arrow-right" size="16" />
+                </template>
+              </Chip>
+            </a>
+            <h1
+              class="mt-8 font-sans text-3xl leading-normal font-semibold md:text-4xl"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              The near-perfect
+              <span class="text-primary-600 font-bold underline">Sales Management</span> platform
+              for small retail businesses
+            </h1>
+            <p
+              class="mt-6 mb-10 text-lg text-gray-600 xl:leading-[1.65]"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Running a growing business can be overwhelming. Leyyow keeps you in control by helping
+              you sell online, track your inventory, monitor your sales, and understand your
+              customers - all in one place.
+            </p>
+
+            <AppButton label="Get Started" class="gradient-btn px-10!" @click="openSignup()" />
+          </div>
         </div>
-      </div>
 
-      <img
-        src="/images/dashboard.png"
-        alt="Leyyow sales management dashboard showing inventory, orders, and analytics for small retail businesses"
-        class="mx-auto mt-8 w-full max-w-6xl"
-      />
+        <!-- Yellowish radial gradient behind button and dashboard -->
+        <div
+          class="pointer-events-none absolute top-1/4 left-1/2 -z-10 h-[600px] w-[800px] -translate-x-1/2 md:h-[400px] md:w-[1000px]"
+          style="
+            background: radial-gradient(
+              circle,
+              rgba(253, 224, 0, 0.4) 0%,
+              rgba(253, 224, 0, 0.25) 30%,
+              rgba(253, 224, 0, 0.15) 50%,
+              rgba(253, 224, 0, 0.05) 70%,
+              transparent 100%
+            );
+            filter: blur(80px);
+          "
+        ></div>
+
+        <img
+          src="/images/dashboard.png"
+          alt="Leyyow sales management dashboard showing inventory, orders, and analytics for small retail businesses"
+          class="relative z-10 mx-auto mt-8 w-full max-w-6xl"
+        />
+      </div>
 
       <div class="mx-auto max-w-6xl px-4 py-6" role="region" aria-label="Key solutions">
         <div>
@@ -308,10 +341,8 @@ const openSignup = (plan?: string) => {
         >
           <AppButton
             label="Get Started"
-            class="mt-auto px-10!"
-            style="
-              background: linear-gradient(136.41deg, #1a2a6c -3.7%, #b21f1f 53.98%, #fdbb2d 99.39%);
-            "
+            class="gradient-btn mt-auto px-10!"
+            style=""
             @click="openSignup()"
           />
         </div>
@@ -321,7 +352,7 @@ const openSignup = (plan?: string) => {
     <AppSection
       id="testimonials"
       class="py-12 md:py-24"
-      :style="{ backgroundImage: 'url(/images/home/hero-pattern.svg)' }"
+      :style="{ backgroundImage: 'url(/images/lines.svg)' }"
     >
       <div class="mx-auto mb-8 max-w-xl px-4 text-center md:mb-16">
         <h2
@@ -450,7 +481,7 @@ const openSignup = (plan?: string) => {
         </p>
         <AppButton
           label="Get Started"
-          class="mt-6 px-10!"
+          class="gradient-btn mt-6 px-10!"
           style="
             background: linear-gradient(136.41deg, #1a2a6c -3.7%, #b21f1f 53.98%, #fdbb2d 99.39%);
           "
@@ -462,7 +493,7 @@ const openSignup = (plan?: string) => {
     <AppSection
       background="my-12"
       class="py-20"
-      :style="{ backgroundImage: 'url(/images/home/hero-pattern.svg)' }"
+      :style="{ backgroundImage: 'url(/images/lines.svg)' }"
     >
       <div class="mx-auto mb-8 max-w-xl px-4 text-center">
         <h2
