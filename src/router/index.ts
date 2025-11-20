@@ -6,7 +6,6 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     component: () => import("@/views/index.vue"),
   },
-
   // 404 - Catch all route (must be last)
   {
     path: "/:pathMatch(.*)*",
