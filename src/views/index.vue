@@ -32,7 +32,7 @@ const openSignup = (plan?: string) => {
 
 <template>
   <div class="font-outfit text-gray-900">
-    <section class="py-8 md:py-16">
+    <section class="py-8 md:py-16" aria-label="Hero section">
       <div
         class="relative mx-auto flex max-w-[1440px] flex-col items-center bg-cover bg-center bg-repeat px-4 md:bg-bottom"
         :style="{ backgroundImage: 'url(/images/home/hero-pattern.svg)' }"
@@ -52,7 +52,7 @@ const openSignup = (plan?: string) => {
               </template>
             </Chip>
           </a>
-          <h2
+          <h1
             class="mt-4 font-sans text-3xl leading-normal font-semibold md:text-4xl"
             data-aos="fade-up"
             data-aos-delay="200"
@@ -60,7 +60,7 @@ const openSignup = (plan?: string) => {
             The near-perfect
             <span class="text-primary-600 font-bold underline">Sales Management</span> platform for
             small retail businesses
-          </h2>
+          </h1>
           <p
             class="mt-4 mb-6 text-lg text-gray-600 xl:leading-[1.65]"
             data-aos="fade-up"
@@ -82,9 +82,13 @@ const openSignup = (plan?: string) => {
         </div>
       </div>
 
-      <img src="/images/dashboard.png" alt="Hero Mockup" class="mx-auto mt-8 w-full max-w-6xl" />
+      <img
+        src="/images/dashboard.png"
+        alt="Leyyow sales management dashboard showing inventory, orders, and analytics for small retail businesses"
+        class="mx-auto mt-8 w-full max-w-6xl"
+      />
 
-      <div class="mx-auto max-w-6xl px-4 py-6">
+      <div class="mx-auto max-w-6xl px-4 py-6" role="region" aria-label="Key solutions">
         <div>
           <Carousel
             v-model="activeFeatSlide"
@@ -132,6 +136,8 @@ const openSignup = (plan?: string) => {
 
       <div
         class="mx-auto flex max-w-7xl flex-col items-center overflow-hidden rounded-xl px-12 py-8 lg:px-16"
+        role="region"
+        aria-label="Trusted businesses"
       >
         <p class="text-core-600 mb-10 text-center text-lg md:mb-16 md:text-xl">
           Businesses that love us:
@@ -151,7 +157,11 @@ const openSignup = (plan?: string) => {
             }"
           >
             <Slide v-for="n in BUSINESSES" :key="n.id" class="h-20 overflow-hidden rounded-xl">
-              <img :src="n.url" class="h-auto w-full rounded-xl" />
+              <img
+                :src="n.url"
+                :alt="`Business ${n.id} that uses Leyyow for sales management`"
+                class="h-auto w-full rounded-xl"
+              />
             </Slide>
           </Carousel>
         </div>
@@ -217,7 +227,7 @@ const openSignup = (plan?: string) => {
           <img
             v-if="feat.image"
             :src="feat.image"
-            alt="Feature Image"
+            :alt="`${feat.title} - ${feat.subtitle}`"
             :class="[
               'mx-auto w-full object-contain',
               selectedFeatureTab !== 'Improve' && (x === 0 || x === 3)

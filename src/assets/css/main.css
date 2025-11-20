@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @import "./theme.css"; /* tailwind custom variables */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-core-800);
 }

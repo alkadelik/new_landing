@@ -1,0 +1,27 @@
+{
+  "name": "Leyyow - Sales Management Platform",
+  "short_name": "Leyyow",
+  "description": "Sales management platform for small retail businesses. Sell online, track inventory, and manage your business all in one place.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#1a2a6c",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "shopping"],
+  "lang": "en-US"
+}
