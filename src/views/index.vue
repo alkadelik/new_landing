@@ -47,7 +47,7 @@ const openSignup = (plan?: string) => {
           <div class="relative mx-auto mb-12 w-full max-w-4xl text-center">
             <!-- Radial gradient background -->
             <div
-              class="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2"
+              class="pointer-events-none absolute top-1/2 left-1/2 -z-10 max-h-[150%] max-w-[150%] -translate-x-1/2 -translate-y-1/2"
               style="
                 background: radial-gradient(
                   circle,
@@ -100,7 +100,7 @@ const openSignup = (plan?: string) => {
 
         <!-- Yellowish radial gradient behind button and dashboard -->
         <div
-          class="pointer-events-none absolute top-1/4 left-1/2 -z-10 h-[600px] w-[800px] -translate-x-1/2 md:h-[400px] md:w-[1000px]"
+          class="pointer-events-none absolute top-1/4 left-1/2 -z-10 h-full max-h-[600px] w-full max-w-[800px] -translate-x-1/2 md:h-[400px] md:w-[1000px]"
           style="
             background: radial-gradient(
               circle,
