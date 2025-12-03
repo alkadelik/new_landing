@@ -93,7 +93,7 @@ export const LEYYOW_PAGES: Array<{
 
 export const BUSINESSES = Array.from({ length: 5 }, (_, index) => ({
   id: index + 1,
-  url: `/images/businesses/${index + 1}.png.jpeg`,
+  url: `/images/businesses/${index + 1}.svg`,
 }))
 
 export const FEATURES: Record<
@@ -160,7 +160,7 @@ export const FEATURES: Record<
         "Get visibility. Spot trends. Plan smarter. Leyyow’s reports turn daily data into insights - helping you track performance, set goals, and make confident decisions.",
     },
     {
-      image: "",
+      image: "/images/report-chart.png",
       title: "Track expenses",
       beta: true,
       subtitle:
