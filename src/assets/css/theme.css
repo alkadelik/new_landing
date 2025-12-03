@@ -63,7 +63,8 @@
   --color-warning-800: #93370d;
   --color-warning-900: #7a2e0e;
   /* colors-blue */
-  --color-blue-50: #eff8ff;
+  --color-blue-25: #f5faff;
+  --color-blue-50: #d1e9ff;
   --color-blue-200: #b2ddff;
   --color-blue-500: #2e90fa;
   --color-blue-600: #1570ef;
@@ -116,6 +117,9 @@
   --color-pink-700: #c11574;
   --color-pink-800: #9e165f;
   --color-pink-900: #851651;
+  /* colors - others */
+  --color-orange-600: #fe6e00;
+  --color-husk-400: #b2836b;
   /* animations */
   --animate-spin: spin 2s linear infinite;
 }
