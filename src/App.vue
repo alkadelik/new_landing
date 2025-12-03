@@ -47,7 +47,7 @@ const footerLinks = {
         </div>
 
         <div class="inline-flex items-center gap-2 sm:gap-6">
-          <a href="http://suite.leyyow.com/signup" target="_blank" rel="noopener noreferrer">
+          <a href="http://suite.leyyow.com/login" target="_blank" rel="noopener noreferrer">
             <AppButton class="gradient-btn px-6!" label="Sign In" />
           </a>
         </div>
