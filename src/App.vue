@@ -58,28 +58,30 @@ const footerLinks = {
       <RouterView />
     </main>
 
-    <footer class="font-outfit bg-primary-950 rounded-t-4xl border-t border-gray-200 pt-16 pb-8">
+    <footer
+      class="font-outfit rounded-t-4xl border-t border-gray-200 bg-[#3D292C] pt-16 pb-8 text-white"
+    >
       <AppSection class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div>
           <img src="/LYW.svg?url" alt="Leyyow Logo" class="mb-4 h-8" />
         </div>
         <div class="col-span-1 grid grid-cols-2 gap-8 sm:grid-cols-3">
           <div v-for="key in Object.keys(footerLinks)" :key="key">
-            <h3 class="text-core-900 mb-4 text-sm font-semibold">{{ key }}</h3>
+            <h3 class="mb-4 text-sm font-semibold text-white">{{ key }}</h3>
             <div class="flex flex-col gap-3">
               <a
                 v-for="link in footerLinks[key]"
                 :key="link.name"
                 :href="link.href"
                 :target="link.href.startsWith('http') ? '_blank' : undefined"
-                class="hover:text-brand-500 text-core-600 hover:text-primary font-medium hover:underline"
+                class="hover:text-primary font-normal text-white hover:underline"
               >
                 {{ link.name }}
                 <span
                   v-if="link.new"
                   :class="[
-                    'text-brand-500 border border-green-400 bg-green-100 text-xs',
-                    'ml-2 inline-flex items-center rounded-full px-2 py-0.5 font-medium',
+                    'border border-green-400 bg-green-100 text-xs text-green-500',
+                    'ml-2 inline-flex items-center rounded-full px-2 py-0.5 font-normal',
                   ]"
                 >
                   New

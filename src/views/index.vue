@@ -501,8 +501,8 @@ const openSignup = (plan?: string) => {
           </div>
 
           <ul class="space-y-4 px-6 py-6 pt-0!">
-            <li v-for="feat in p.features" :key="feat" class="flex items-start gap-2">
-              <Icon name="check-icon2" class="mt-0.5 h-6 w-6 shrink-0 md:h-7 md:w-7" />
+            <li v-for="feat in p.features" :key="feat" class="flex items-center gap-2">
+              <Icon name="check-circle" size="20" class="text-primary-600" />
               <span class="text-core-600 text-sm">{{ feat }}</span>
             </li>
           </ul>
