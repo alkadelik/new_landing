@@ -545,15 +545,15 @@ const openSignup = (plan?: string) => {
           audiences.
         </p>
         <div class="z-10 flex justify-center py-6 md:justify-start">
-          <AppButton
-            label="Create an Event"
-            class="gradient-btn Z-10 px-10"
-            @click="openSignup()"
-          />
           <a
-            href="http://
-          
-          "
+            href="https://eventful.leyyow.com/events?open=create"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AppButton label="Create an Event" class="gradient-btn Z-10 px-10" />
+          </a>
+          <a
+            href="https://eventful.leyyow.com/upcoming-events"
             target="_blank"
             rel="noopener noreferrer"
           >
