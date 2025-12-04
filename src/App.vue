@@ -59,7 +59,7 @@ const footerLinks = {
     </main>
 
     <footer
-      class="font-outfit rounded-t-4xl border-t border-gray-200 bg-[#3D292C] pt-16 pb-8 text-white"
+      class="font-outfit rounded-t-4xl border-t border-gray-200 bg-[#3D292C] pt-16 pb-8 text-white lg:rounded-t-[64px]"
     >
       <AppSection class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div>
@@ -74,7 +74,7 @@ const footerLinks = {
                 :key="link.name"
                 :href="link.href"
                 :target="link.href.startsWith('http') ? '_blank' : undefined"
-                class="hover:text-primary font-normal text-white hover:underline"
+                class="hover:text-primary font-light text-white hover:underline"
               >
                 {{ link.name }}
                 <span
@@ -91,19 +91,17 @@ const footerLinks = {
           </div>
         </div>
       </AppSection>
-      <div class="border-core-200 mt-16 border-t" />
+      <div class="border-core-800 mt-16 border-t" />
       <AppSection
         class="mt-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
       >
         <div>
-          <h3 class="text-core-900 mb-2 text-lg font-medium md:text-xl">
-            Sell smarter with Leyyow
-          </h3>
-          <p class="text-core-600 text-sm md:text-base">
+          <h3 class="mb-2 text-lg font-medium text-white md:text-xl">Sell smarter with Leyyow</h3>
+          <p class="text-sm text-gray-50 md:text-base">
             Start free, cancel anytime, and only pay when you're ready to scale.
           </p>
         </div>
-        <p class="text-core-600 mt-4 text-sm md:mt-0 md:text-base">
+        <p class="mt-4 text-sm text-gray-50 md:mt-0 md:text-base">
           &copy; {{ new Date().getFullYear() }} Leyyow. All rights reserved.
         </p>
       </AppSection>
