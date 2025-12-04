@@ -58,7 +58,7 @@ const footerLinks = {
       <RouterView />
     </main>
 
-    <footer class="font-outfit border-t border-gray-200 pt-16 pb-8">
+    <footer class="font-outfit bg-primary-950 rounded-t-4xl border-t border-gray-200 pt-16 pb-8">
       <AppSection class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div>
           <img src="/LYW.svg?url" alt="Leyyow Logo" class="mb-4 h-8" />

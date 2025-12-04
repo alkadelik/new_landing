@@ -11,7 +11,7 @@ import ConsentBanner from "@components/ConsentBanner.vue"
 import AppSection from "@components/AppSection.vue"
 import Avatar from "@components/Avatar.vue"
 import ButtonGroup from "@components/ButtonGroup.vue"
-import { BUSINESSES, FEATURES, LEYYOW_PAGES, PRICINGS, SOLUTIONS } from "@/constants/home"
+import { BUSINESSES, FEATURES, PRICINGS, SOLUTIONS } from "@/constants/home"
 
 onMounted(() => {
   AOS.init({ duration: 800, easing: "ease-in-out", once: true })
@@ -336,8 +336,8 @@ const openSignup = (plan?: string) => {
           Wall of Love
         </h2>
         <p class="text-md mt-5 text-gray-600 md:text-lg" data-aos="fade-up" data-aos-delay="200">
-          Running a growing business can be overwhelming. Leyyow keeps you in control by helping you
-          sell online.
+          Our favourite part of building Leyyow? Seeing how much easier it makes life for the people
+          who use it.
         </p>
       </div>
 
@@ -550,6 +550,15 @@ const openSignup = (plan?: string) => {
             class="gradient-btn Z-10 px-10"
             @click="openSignup()"
           />
+          <a
+            href="http://
+          
+          "
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AppButton label="Find a Pop-up" class="ml-4! px-10!" variant="outlined" />
+          </a>
         </div>
       </div>
       <img src="/images/eventful.svg" class="h-64 w-80 md:h-120 md:w-1/2" />
@@ -626,7 +635,7 @@ const openSignup = (plan?: string) => {
       </div>
     </AppSection> -->
 
-    <AppSection background="" class="relative py-4 md:py-20">
+    <!-- <AppSection background="" class="relative py-4 md:py-20">
       <div
         :style="{ backgroundImage: 'url(/images/lines.svg)' }"
         class="pointer-events-none absolute inset-0 bg-size-[91%,100%] bg-center bg-no-repeat opacity-40"
@@ -673,7 +682,7 @@ const openSignup = (plan?: string) => {
           </div>
         </div>
       </div>
-    </AppSection>
+    </AppSection> -->
 
     <!-- Consent Banner -->
     <ConsentBanner />
