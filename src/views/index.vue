@@ -488,7 +488,12 @@ const openSignup = (plan?: string) => {
               </div>
 
               <h3 class="mt-6 text-3xl font-semibold">
-                ₦{{ selectedPricingPeriod === "Monthly" ? p.price : (p.price * 12 * 0.8).toFixed(0)
+                ₦{{
+                  selectedPricingPeriod === "Monthly"
+                    ? p.price
+                    : p.name === "Bud"
+                      ? p.price * 12
+                      : (p.price * 12 * 0.8).toFixed(0)
                 }}<span class="ml-0.5 text-base font-normal text-gray-500"
                   >k/{{ selectedPricingPeriod === "Monthly" ? "month" : "year" }}</span
                 >
