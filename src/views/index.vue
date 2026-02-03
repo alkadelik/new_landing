@@ -496,7 +496,7 @@ const openSignup = (plan?: string) => {
             </div>
 
             <p class="my-4 text-sm text-gray-600">
-              Essential tools to manage your store. Free forever.
+              {{ p.name === "Bloom" ? "Premium" : "Essential" }} tools to manage your store.
             </p>
           </div>
 
