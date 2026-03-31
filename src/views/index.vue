@@ -341,92 +341,38 @@ const openSignup = (plan?: string) => {
         </p>
       </div>
 
-      <div class="space-y-12">
-        <div>
-          <Carousel
-            :items-to-show="1"
-            :autoplay="2500"
-            :wrap-around="true"
-            :gap="8"
-            :breakpoints="{
-              640: { itemsToShow: 2, gap: 16 },
-              768: { itemsToShow: 2, gap: 32 },
-              1024: { itemsToShow: 3, gap: 48 },
-            }"
-          >
-            <Slide v-for="n in 5" :key="n">
-              <div
-                class="border-warning-200 bg-warning-25 flex flex-col items-start rounded-3xl border px-5 py-8"
-                data-aos="fade-up"
-                :data-aos-delay="n * 100"
-              >
-                <div class="inline-flex gap-2">
-                  <Icon
-                    v-for="v in 5"
-                    :key="v"
-                    size="20"
-                    name="star-filled"
-                    :class="v <= 4 ? 'text-warning-400' : 'text-gray-300'"
-                  />
-                </div>
-                <p class="mt-4 mb-6 text-sm">
-                  "Leyyow made organizing our pop-up event a breeze. The platform's intuitive
-                  interface and seamless vendor management tools saved us countless hours."
-                </p>
-                <Avatar
-                  url="https://randomuser.me/api/portraits/women/2.jpg"
-                  name="Tolu A."
-                  extra-text="Marketing Lead, ShopEase"
-                  extra-text-class="text-primary-500!"
-                  class="mt-auto"
+      <div>
+        <Carousel :items-to-show="1" :wrap-around="false">
+          <Slide :key="1">
+            <div
+              class="border-warning-200 bg-warning-25 flex flex-col items-start rounded-3xl border px-5 py-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="inline-flex gap-2">
+                <Icon
+                  v-for="v in 5"
+                  :key="v"
+                  size="20"
+                  name="star-filled"
+                  class="text-warning-400"
                 />
               </div>
-            </Slide>
-          </Carousel>
-        </div>
-        <!--  -->
-        <div class="hidden md:block">
-          <Carousel
-            :items-to-show="1"
-            :autoplay="3200"
-            :wrap-around="true"
-            :gap="12"
-            :breakpoints="{
-              640: { itemsToShow: 2, gap: 32 },
-              768: { itemsToShow: 2, gap: 48 },
-              1024: { itemsToShow: 3, gap: 64 },
-            }"
-          >
-            <Slide v-for="n in 5" :key="n">
-              <div
-                class="border-warning-200 bg-warning-25 flex flex-col items-start rounded-3xl border px-5 py-8"
-                data-aos="fade-up"
-                :data-aos-delay="n * 100"
-              >
-                <div class="inline-flex gap-2">
-                  <Icon
-                    v-for="v in 5"
-                    :key="v"
-                    size="20"
-                    name="star-filled"
-                    :class="v <= 4 ? 'text-warning-400' : 'text-gray-300'"
-                  />
-                </div>
-                <p class="mt-4 mb-6 text-sm">
-                  "Leyyow made organizing our pop-up event a breeze. The platform's intuitive
-                  interface and seamless vendor management tools saved us countless hours."
-                </p>
-                <Avatar
-                  url="https://randomuser.me/api/portraits/women/2.jpg"
-                  name="Tolu A."
-                  extra-text="Marketing Lead, ShopEase"
-                  extra-text-class="text-primary-500!"
-                  class="mt-auto"
-                />
-              </div>
-            </Slide>
-          </Carousel>
-        </div>
+              <p class="mt-4 mb-6 text-sm">
+                "Leyyow is an excellent tool. It saved me from an inventory nightmare, I can now
+                track sales and stock effortlessly. I mostly use it for my pop-up shops, and it
+                gives me real-time insights into which products are selling best and which aren't. I
+                also appreciate how responsive and supportive the team is."
+              </p>
+              <Avatar
+                name="Dear Ketandu"
+                extra-text="Leyyow User"
+                extra-text-class="text-primary-500!"
+                class="mt-auto"
+              />
+            </div>
+          </Slide>
+        </Carousel>
       </div>
     </AppSection>
 
@@ -467,6 +413,7 @@ const openSignup = (plan?: string) => {
           v-for="(p, index) in PRICINGS"
           :key="p.name"
           class="border-warning-200 bg-warning-25 flex w-full flex-col rounded-3xl border sm:w-1/2 md:w-1/3"
+          :class="{ 'opacity-75': p.comingSoon }"
           data-aos="fade-up"
           :data-aos-delay="index * 100"
         >
@@ -474,26 +421,16 @@ const openSignup = (plan?: string) => {
             <div :style="p.background" class="rounded-2xl p-4">
               <div class="flex justify-between">
                 <Chip
-                  :label="p.name"
+                  :label="p.comingSoon ? `${p.name} (Coming Soon)` : p.name"
                   size="sm"
                   :class="`border-white! bg-white! ${p.name === 'Bloom' ? 'text-[#4CA30D]!' : 'text-success-700!'}`"
                 />
 
-                <Chip
-                  v-if="p.name === 'Bloom'"
-                  label="Leyyow's Choice"
-                  size="sm"
-                  class="bg-white!"
-                />
+                <Chip v-if="p.badge" :label="p.badge" size="sm" class="bg-white!" />
               </div>
 
               <h3 class="mt-6 text-3xl font-semibold">
-                ₦{{
-                  selectedPricingPeriod === "Monthly"
-                    ? p.price
-                    : p.name === "Bud"
-                      ? p.price * 12
-                      : (p.price * 12 * 0.8).toFixed(0)
+                ₦{{ selectedPricingPeriod === "Monthly" ? p.price : p.yearlyPrice
                 }}<span class="ml-0.5 text-base font-normal text-gray-500"
                   >k/{{ selectedPricingPeriod === "Monthly" ? "month" : "year" }}</span
                 >
@@ -501,7 +438,7 @@ const openSignup = (plan?: string) => {
             </div>
 
             <p class="my-4 text-sm text-gray-600">
-              {{ p.name === "Bloom" ? "Premium" : "Essential" }} tools to manage your store.
+              {{ p.description }}
             </p>
           </div>
 
@@ -513,9 +450,10 @@ const openSignup = (plan?: string) => {
           </ul>
           <div class="p-4 pb-6">
             <AppButton
-              label="Get Started"
+              :label="p.comingSoon ? 'Coming Soon' : 'Get Started'"
               class="gradient-btn w-full! px-10"
-              @click="openSignup()"
+              :disabled="p.comingSoon"
+              @click="!p.comingSoon && openSignup()"
             />
           </div>
         </div>

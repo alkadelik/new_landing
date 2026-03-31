@@ -3,37 +3,49 @@ import { TChipColor } from "@components/Chip.vue"
 export const PRICINGS: Array<{
   name: string
   price: number
+  yearlyPrice: number
   background: string
   features: string[]
+  description: string
+  badge?: string
+  comingSoon?: boolean
 }> = [
-  {
-    name: "Bud",
-    price: 2, // price in thousands
-    background:
-      "background: linear-gradient(101.09deg, #ECFDF3 0%, #A9EFC5 100.08%); border: 1px solid #A9EFC5",
-    features: [
-      "Unlimited orders",
-      "20 products",
-      "Unlimited invoices & receipts",
-      "Automated delivery",
-      "Basic chat & email support",
-      "Basic storefront",
-      "Basic order management",
-    ],
-  },
   {
     name: "Bloom",
     price: 15, // price in thousands
+    yearlyPrice: 120, // yearly price in thousands
     background:
       "background: linear-gradient(101.09deg, #FAFEF5 0%, #E3FBCC 100.08%); border: 1px solid #D0F8AB",
+    description: "Essential tools to manage and grow your store.",
+    badge: "Leyyow's Choice",
     features: [
-      "All basic features",
       "Unlimited products",
-      "Unlimited popups",
+      "5 images per product",
+      "Full order management",
+      "Up to 3 team members",
+      "2 store locations",
       "Advanced reports",
-      "Priority chat & email support",
       "Branded storefront",
-      "Advanced order management",
+      "Priority chat & email support",
+    ],
+  },
+  {
+    name: "Burst",
+    price: 30, // price in thousands
+    yearlyPrice: 300, // yearly price in thousands
+    background:
+      "background: linear-gradient(101.09deg, #ECFDF3 0%, #A9EFC5 100.08%); border: 1px solid #A9EFC5",
+    description: "Everything you need to scale without limits.",
+    comingSoon: true,
+    features: [
+      "Everything in Bloom",
+      "Unlimited team members & locations",
+      "Production management",
+      "Custom domain",
+      "Abandoned cart recovery",
+      "Expense savings",
+      "Full analytics & reports",
+      "Recipes & production runs",
     ],
   },
 ]
