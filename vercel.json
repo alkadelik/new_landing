@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/q/:path*", "destination": "https://backend.leyyow.com/q/:path*" }]
+}
